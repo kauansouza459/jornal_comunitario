@@ -1,0 +1,22 @@
+kauan souza 10:11
+Dae, Caio.
+
+Se tu estiver lendo isso, segue algumas alterações para o site:
+
+* Ajusta a paleta de cores usando principalmente estas cores:
+
+  * #324D34
+  * #72997A
+  * #EBE4C2
+  * #719542
+
+Essas serão as cores principais do projeto.
+
+* Para os botões, vamos utilizar as cores e padrões que vimos na matéria de Interface e Usuário, para deixar a apresentação do site mais organizada e coerente.
+
+* Sobre conteúdo e imagens, não precisa fazer agora.
+
+* Vamos utilizar o Bootstrap para realizar as partes mais complexas do site.
+
+Outra coisa: aquele site que te mostrei no outro dia tinha muitas coisas que ainda não vimos em sala. Por isso, achei melhor não arriscar usar ele diretamente como nosso projeto. Mesmo assim, vamos usar ele como base e inspiração para desenvolver o nosso site.
+
