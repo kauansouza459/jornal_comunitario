@@ -8,7 +8,7 @@
 /* ===== CONFIGURAÇÃO GERAL ===== */
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #1e1e1e;
+    background-color: #ffffff;
     color: white;
 
     display: grid;
@@ -27,8 +27,8 @@ aside,
 main,
 footer,
 .card{
-    background-color: rgba(120, 120, 120, 0.25);
-    border: 2px solid rgba(180, 180, 180, 0.4);
+    background-color: #324D34;
+    border: 2px solid #719542;
     backdrop-filter: blur(5px);
     border-radius: 10px;
 }
@@ -53,14 +53,15 @@ nav ul{
 nav a{
     text-decoration: none;
     color: white;
-    background-color: rgba(80,80,80,0.6);
+    background-color: #719542
+;
     padding: 10px 15px;
     border-radius: 8px;
     transition: 0.3s;
 }
 
 nav a:hover{
-    background-color: rgba(150,150,150,0.6);
+    background-color: #72997A;
 }
 
 /* ===== MENU LATERAL ===== */
@@ -117,7 +118,7 @@ main p{
 
 .card:hover{
     transform: scale(1.02);
-    background-color: rgba(160,160,160,0.3);
+    background-color: #719542;
 }
 
 /* ===== FOOTER ===== */
