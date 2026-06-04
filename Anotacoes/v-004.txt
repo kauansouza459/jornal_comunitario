@@ -1,0 +1,8 @@
+Dae, Caio.
+
+Fiz a página de contatos e usei o ChatGPT para gerar uma base, só para agilizar o desenvolvimento.
+
+As próximas páginas que faltam fazer são:
+
+Enviar Notícia
+Enviar Dúvida
