@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Assents/Css/styles.css">
+    <title>Enviar Dúvidas</title>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Portal de Dúvidas</h1>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="enviar_noticia.html">Enviar Notícia</a></li>
+                <li><a href="enviar_duvida.html">Enviar Dúvida</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu lateral -->
+    <aside>
+        <h2>Menu Lateral</h2>
+
+        <ul>
+            <li><a href="index.html">Página Inicial</a></li>
+            <li><a href="enviar_noticia.html">Enviar Notícia</a></li>
+            <li><a href="enviar_duvida.html">Enviar Dúvida</a></li>
+        </ul>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main>
+
+        <h2>Envie sua Dúvida</h2>
+
+        <p>
+            Utilize o formulário abaixo para enviar suas dúvidas.
+            Nossa equipe analisará sua mensagem e responderá o mais breve possível.
+        </p>
+
+        <div class="card">
+
+            <form id="formDuvida">
+
+                <div class="campo">
+                    <label for="nome">Nome:</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite seu nome"
+                        required>
+                </div>
+
+                <br>
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite seu e-mail"
+                        required>
+                </div>
+
+                <br>
+
+                <div class="campo">
+                    <label for="assunto">Assunto da Dúvida:</label>
+                    <textarea
+                        id="assunto"
+                        name="assunto"
+                        rows="6"
+                        placeholder="Descreva sua dúvida"
+                        required>
+                    </textarea>
+                </div>
+
+                <br>
+
+                <button type="submit">
+                    Enviar Dúvida
+                </button>
+
+            </form>
+
+            <br>
+
+            <p id="mensagem"></p>
+
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Conteúdo sem fontes reais.</p>
+    </footer>
+
+    <script>
+
+        const formulario = document.getElementById("formDuvida");
+
+        formulario.addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            let nome = document.getElementById("nome").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let assunto = document.getElementById("assunto").value.trim();
+
+            let mensagem = document.getElementById("mensagem");
+
+            if(nome === "" || email === "" || assunto === ""){
+                mensagem.innerHTML = "Por favor, preencha todos os campos.";
+                mensagem.style.color = "red";
+                return;
+            }
+
+            mensagem.innerHTML =
+                "Sua dúvida foi enviada com sucesso!";
+
+            mensagem.style.color = "green";
+
+            formulario.reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
