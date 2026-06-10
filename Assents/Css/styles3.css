@@ -1,0 +1,260 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CONFIGURAÇÃO GERAL ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: white;
+
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+}
+
+/* ===== ESTILO BASE DAS SEÇÕES ===== */
+header,
+main,
+footer,
+.page,
+.card {
+    background-color: #324D34;
+    border: 2px solid #719542;
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+/* ===== HEADER ===== */
+header {
+    grid-area: header;
+    padding: 20px;
+    margin: 10px;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: #719542;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #72997A;
+}
+
+/* ===== PÁGINA: PUBLICAR NOTÍCIA ===== */
+.page {
+    margin: 10px;
+    overflow: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+    background-color: #2a3f2b;
+    border-bottom: 2px solid #719542;
+}
+
+.hero-inner {
+    max-width: 800px;
+}
+
+.chamada-edicao {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #a8c97a;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #cde0b0;
+    font-size: 15px;
+}
+
+/* ===== ÁREA DO FORMULÁRIO ===== */
+.publicar-area {
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 860px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ===== AVISO ===== */
+.aviso-publicar {
+    background-color: #2a3f2b;
+    border: 1px solid #719542;
+    border-left: 4px solid #a8c97a;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #cde0b0;
+    line-height: 1.5;
+}
+
+.aviso-publicar strong {
+    color: #a8c97a;
+}
+
+/* ===== GRUPOS DE FORMULÁRIO ===== */
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.form-grupo label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #a8c97a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    background-color: #253d27;
+    border: 1.5px solid #719542;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: border-color 0.3s, background-color 0.3s;
+    outline: none;
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+    color: #72997A;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: #a8c97a;
+    background-color: #2e4a30;
+}
+
+.form-grupo select option {
+    background-color: #324D34;
+    color: white;
+}
+
+.form-grupo textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* ===== LINHA COM DOIS CAMPOS ===== */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+/* ===== BOTÃO PUBLICAR ===== */
+.btn-publicar {
+    background-color: #719542;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.btn-publicar:hover {
+    background-color: #a8c97a;
+    color: #1e2e1f;
+    transform: scale(1.03);
+}
+
+/* ===== TOAST ===== */
+.toast {
+    display: none;
+    background-color: #2a3f2b;
+    border: 1px solid #a8c97a;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: #cde0b0;
+    animation: fadeIn 0.4s ease;
+}
+
+.toast.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    grid-area: footer;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #a8c97a;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .btn-publicar {
+        width: 100%;
+        text-align: center;
+    }
+}

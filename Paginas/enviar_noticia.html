@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="/Assents/Css/styles3.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>pagina de contatos</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Botão</a></li>
+                <li><a href="#">Botão</a></li>
+                <li><a href="#">Botão</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- PÁGINA 2: PUBLICAR NOTÍCIA -->
+  <div class="page" id="page-publicar">
+    <div class="hero" style="padding: 28px 24px;">
+      <div class="hero-inner">
+        <p class="chamada-edicao">Redação Comunitária</p>
+        <h1 style="font-size:28px;">Publique uma nova notícia</h1>
+        <p>Compartilhe informações relevantes com toda a comunidade da região.</p>
+      </div>
+    </div>
+    <div class="publicar-area">
+      <div class="aviso-publicar">
+        <strong>Atenção:</strong> Somente usuários qualificados podem publicar notícias. Certifique-se de que as informações são verídicas e de interesse comunitário.
+      </div>
+      <div class="form-grupo">
+        <label>Título da Notícia</label>
+        <input type="text" placeholder="Escreva um título claro e objetivo..." id="titulo-noticia">
+      </div>
+      <div class="form-row">
+        <div class="form-grupo">
+          <label>Região / Bairro</label>
+          <select id="regiao-noticia">
+            <option value="">Selecione a região...</option>
+            <option>Centro</option>
+            <option>Bairro Norte</option>
+            <option>Bairro Sul</option>
+            <option>Bairro Leste</option>
+            <option>Zona Rural</option>
+          </select>
+        </div>
+        <div class="form-grupo">
+          <label>Categoria</label>
+          <select id="categoria-noticia">
+            <option value="">Selecione a categoria...</option>
+            <option>Saúde</option>
+            <option>Educação</option>
+            <option>Infraestrutura</option>
+            <option>Cultura</option>
+            <option>Segurança</option>
+            <option>Meio Ambiente</option>
+            <option>Agricultura</option>
+            <option>Geral</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-grupo">
+        <label>Conteúdo da Notícia</label>
+        <textarea placeholder="Descreva a notícia com detalhes relevantes para a comunidade..." id="conteudo-noticia"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-grupo">
+          <label>Nome do Autor</label>
+          <input type="text" placeholder="Seu nome completo..." id="autor-noticia">
+        </div>
+        <div class="form-grupo">
+          <label>E-mail de Contato</label>
+          <input type="email" placeholder="seu@email.com" id="email-noticia">
+        </div>
+      </div>
+      <div id="toast-publicar" class="toast">✅ Notícia enviada com sucesso! Aguarde a revisão dos administradores.</div>
+      <button class="btn-publicar" onclick="publicarNoticia()">Enviar para Publicação</button>
+    </div>
+  </div>
+
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Conteúdo sem fontes reais.</p>
+    </footer>
+
+</body>
+</html>
