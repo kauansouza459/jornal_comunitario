@@ -4,6 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Assents/Css/styles.css">
+    <style>
+        .card-images {
+            display: flex;
+            gap: 8px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .card-images img {
+            width: calc(33.333% - 6px);
+            height: 320px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .card-images {
+                flex-direction: column;
+            }
+            .card-images img {
+                width: 300px;
+                height: 500px;
+            }
+        }
+    </style>
     <title>modelo para ver os espaçoes onde o site posuira cada coisa</title>
 </head>
 <body>
@@ -15,6 +39,8 @@
                 <li><a href="#">botao</a></li>
                 <li><a href="#">botao</a></li>
                 <li><a href="#">botao</a></li>
+                <li><a href="#">botao</a></li>
+
             </ul>
         </nav>
     </header>
@@ -35,36 +61,81 @@
         <p>Este é o conteúdo principal do site. Aqui você pode colocar textos, imagens, vídeos e outros elementos para informar os visitantes sobre o que seu site oferece.</p>
         <!-- tera card ocupando que mostrara o conteudo por regiao-->
         <div class="card">
-            <h3>Card 1</h3>
-            <p>Informações sobre o card.</p>
-        </div>
+    <h3>Card 1</h3>
+    <div class="card-images">
+        <img src="../Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 1 do Card 1">
+        <img src="../Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 2 do Card 1">
+        <img src="../Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 3 do Card 1">
+    </div>
+    <p>Informações sobre o card.</p>
+</div>
         <div class="card">
             <h3>Card 2</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 1 do Card 2">
+                <img src="Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 2 do Card 2">
+                <img src="Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 3 do Card 2">
+            </div>
             <p>Informações sobre o card.</p>
         </div>
         <div class="card">
             <h3>Card 3</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/corpo_de_bombeiro_campo_da_aviaçao.png" alt="Imagem 1 do Card 3">
+                <img src="Assents/Imagens/grupo_1/imagem_8.png" alt="Imagem 2 do Card 3">
+                <img src="Assents/Imagens/grupo_1/imagem_9.png" alt="Imagem 3 do Card 3">
+            </div>
             <p>Informações sobre o card.</p>
         </div>
          <div class="card">
             <h3>Card 4</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_10.png" alt="Imagem 1 do Card 4">
+                <img src="Assents/Imagens/grupo_1/imagem_11.png" alt="Imagem 2 do Card 4">
+                <img src="Assents/Imagens/grupo_1/imagem_12.png" alt="Imagem 3 do Card 4">
+            </div>
             <p>Informações sobre o card.</p>
         </div>
          <div class="card">
             <h3>Card 5</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_13.png" alt="Imagem 1 do Card 5">
+                <img src="Assents/Imagens/grupo_1/imagem_14.png" alt="Imagem 2 do Card 5">
+                <img src="Assents/Imagens/grupo_1/imagem_15.png" alt="Imagem 3 do Card 5">
+            </div>
             <p>Informações sobre o card.</p>
         </div> <div class="card">
             <h3>Card 6</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_16.png" alt="Imagem 1 do Card 6">
+                <img src="Assents/Imagens/grupo_1/imagem_17.png" alt="Imagem 2 do Card 6">
+                <img src="Assents/Imagens/grupo_1/imagem_18.png" alt="Imagem 3 do Card 6">
+            </div>
             <p>Informações sobre o card.</p>
         </div>
          <div class="card">
             <h3>Card 7</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_19.png" alt="Imagem 1 do Card 7">
+                <img src="Assents/Imagens/grupo_1/imagem_20.png" alt="Imagem 2 do Card 7">
+                <img src="Assents/Imagens/grupo_1/imagem_21.png" alt="Imagem 3 do Card 7">
+            </div>
             <p>Informações sobre o card.</p>
         </div> <div class="card">
             <h3>Card 8</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_22.png" alt="Imagem 1 do Card 8">
+                <img src="Assents/Imagens/grupo_1/imagem_23.png" alt="Imagem 2 do Card 8">
+                <img src="Assents/Imagens/grupo_1/imagem_24.png" alt="Imagem 3 do Card 8">
+            </div>
             <p>Informações sobre o card.</p>
         </div> <div class="card">
             <h3>Card 9</h3>
+            <div class="card-images">
+                <img src="Assents/Imagens/grupo_1/imagem_25.png" alt="Imagem 1 do Card 9">
+                <img src="Assents/Imagens/grupo_1/imagem_26.png" alt="Imagem 2 do Card 9">
+                <img src="Assents/Imagens/grupo_1/imagem_27.png" alt="Imagem 3 do Card 9">
+            </div>
             <p>Informações sobre o card.</p>
         </div>
     </main>
