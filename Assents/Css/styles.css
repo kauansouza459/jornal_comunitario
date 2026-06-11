@@ -1,8 +1,17 @@
-/* ===== RESET BÁSICO ===== */
+
+/* ===== RESET DE ESTILOS ===== */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ===== PALETA DE CORES ===== */
+:root{
+    --verde-escuro: #324D34;
+    --verde-medio: #72997A;
+    --verde-destaque: #719542;
+    --bege: #EBE4C2;
 }
 
 /* ===== CONFIGURAÇÃO GERAL ===== */
@@ -21,15 +30,14 @@ body{
     min-height: 100vh;
 }
 
-/* ===== EFEITO CINZA NAS DIVISÕES ===== */
+/* ===== EFEITO NAS DIVISÕES ===== */
 header,
 aside,
 main,
 footer,
 .card{
-    background-color: #324D34;
-    border: 2px solid #719542;
-    backdrop-filter: blur(5px);
+    background-color: var(--verde-escuro);
+    border: 2px solid var(--verde-destaque);
     border-radius: 10px;
 }
 
@@ -41,6 +49,7 @@ header{
 }
 
 header h1{
+    color: var(--bege);
     margin-bottom: 15px;
 }
 
@@ -53,15 +62,14 @@ nav ul{
 nav a{
     text-decoration: none;
     color: white;
-    background-color: #719542
-;
+    background-color: var(--verde-destaque);
     padding: 10px 15px;
     border-radius: 8px;
     transition: 0.3s;
 }
 
 nav a:hover{
-    background-color: #72997A;
+    background-color: var(--verde-medio);
 }
 
 /* ===== MENU LATERAL ===== */
@@ -70,7 +78,6 @@ aside{
     padding: 20px;
     margin: 10px;
 
-    /* acompanha a página */
     position: sticky;
     top: 10px;
 
@@ -78,6 +85,7 @@ aside{
 }
 
 aside h2{
+    color: var(--bege);
     margin-bottom: 15px;
 }
 
@@ -102,6 +110,7 @@ main{
 }
 
 main h2{
+    color: var(--bege);
     margin-bottom: 15px;
 }
 
@@ -116,9 +125,14 @@ main p{
     transition: 0.3s;
 }
 
+.card h3{
+    color: var(--bege);
+    margin-bottom: 10px;
+}
+
 .card:hover{
     transform: scale(1.02);
-    background-color: #719542;
+    background-color: var(--verde-destaque);
 }
 
 /* ===== FOOTER ===== */
@@ -127,6 +141,7 @@ footer{
     padding: 20px;
     margin: 10px;
     text-align: center;
+    color: var(--bege);
 }
 
 /* ===== RESPONSIVIDADE ===== */
@@ -149,5 +164,58 @@ footer{
     aside{
         position: relative;
         top: 0;
+    }
+}
+
+/* ===== SUB-CARDS (imagem + notícia) ===== */
+.card-grid {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0 4px;
+    width: 100%;
+}
+
+.sub-card {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--verde-destaque);
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: var(--verde-escuro);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s;
+}
+
+.sub-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.sub-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.sub-card-body {
+    padding: 10px 12px 14px;
+    flex: 1;
+}
+
+.sub-card-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--bege);
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        flex-direction: column;
+    }
+
+    .sub-card img {
+        height: 260px;
     }
 }
