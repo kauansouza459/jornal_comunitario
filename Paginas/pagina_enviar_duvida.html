@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Assents/Css/styles.css">
+    <link rel="stylesheet" href="/Assents/Css/styles3.css">
     <title>Enviar Dúvidas</title>
 </head>
 <body>
@@ -14,39 +14,32 @@
 
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="enviar_noticia.html">Enviar Notícia</a></li>
-                <li><a href="enviar_duvida.html">Enviar Dúvida</a></li>
+                <li><a href="pagina_princial.html">Pagina Principal</a></li>
+                <li><a href="pagina_contatos.html">Pagina Contatos</a></li>
+                <li><a href="pagina_enviar_duvida.html">Pagina Enviar Duvidas</a></li>
+                <li><a href="enviar_noticia.html">Enviar Noticia</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Menu lateral -->
-    <aside>
-        <h2>Menu Lateral</h2>
-
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li><a href="enviar_noticia.html">Enviar Notícia</a></li>
-            <li><a href="enviar_duvida.html">Enviar Dúvida</a></li>
-        </ul>
-    </aside>
 
     <!-- Conteúdo Principal -->
     <main>
 
-        <h2>Envie sua Dúvida</h2>
-
-        <p>
-            Utilize o formulário abaixo para enviar suas dúvidas.
-            Nossa equipe analisará sua mensagem e responderá o mais breve possível.
-        </p>
+        <div class="page" id="page-publicar">
+    <div class="hero" style="padding: 28px 24px;">
+      <div class="hero-inner">
+        <p class="chamada-edicao">Redação Comunitária</p>
+        <h1 style="font-size:28px;">Publique uma nova notícia</h1>
+        <p>Compartilhe informações relevantes com toda a comunidade da região.</p>
+      </div>
+    </div>
 
         <div class="card">
 
-            <form id="formDuvida">
+            <form id="formDuvida" class="publicar-area">
 
-                <div class="campo">
+                <div class="form-grupo">
                     <label for="nome">Nome:</label>
                     <input
                         type="text"
@@ -56,9 +49,7 @@
                         required>
                 </div>
 
-                <br>
-
-                <div class="campo">
+                <div class="form-grupo">
                     <label for="email">E-mail:</label>
                     <input
                         type="email"
@@ -68,30 +59,23 @@
                         required>
                 </div>
 
-                <br>
-
-                <div class="campo">
+                <div class="form-grupo">
                     <label for="assunto">Assunto da Dúvida:</label>
                     <textarea
                         id="assunto"
                         name="assunto"
                         rows="6"
                         placeholder="Descreva sua dúvida"
-                        required>
-                    </textarea>
+                        required></textarea>
                 </div>
 
-                <br>
-
-                <button type="submit">
+                <button type="submit" class="btn-publicar">
                     Enviar Dúvida
                 </button>
 
             </form>
 
-            <br>
-
-            <p id="mensagem"></p>
+            <p id="mensagem" class="toast"></p>
 
         </div>
 
@@ -118,14 +102,14 @@
 
             if(nome === "" || email === "" || assunto === ""){
                 mensagem.innerHTML = "Por favor, preencha todos os campos.";
-                mensagem.style.color = "red";
+                mensagem.style.color = "#e07a7a";
+                mensagem.classList.add("show");
                 return;
             }
 
-            mensagem.innerHTML =
-                "Sua dúvida foi enviada com sucesso!";
-
-            mensagem.style.color = "green";
+            mensagem.innerHTML = "Sua dúvida foi enviada com sucesso!";
+            mensagem.style.color = "#a8c97a";
+            mensagem.classList.add("show");
 
             formulario.reset();
 

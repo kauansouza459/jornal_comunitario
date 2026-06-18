@@ -7,16 +7,17 @@
 
 /* ===== PALETA DE CORES ===== */
 :root{
-    --verde-escuro: #324D34;
-    --verde-medio: #72997A;
+    --verde-escuro: #3c6b40;
+    --verde-medio: #152b14;
     --verde-destaque: #719542;
     --bege: #EBE4C2;
+    --fundo: #1a3a21;
 }
 
 /* ===== CONFIGURAÇÃO GERAL ===== */
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    background-color: var(--fundo);
     color: white;
 
     display: grid;

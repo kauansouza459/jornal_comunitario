@@ -5,10 +5,26 @@
     box-sizing: border-box;
 }
 
+/* ===== PALETA DE CORES ===== */
+:root{
+    --verde-escuro: #3c6b40;
+    --verde-medio: #152b14;
+    --verde-destaque: #719542;
+    --verde-suave: #72997A;
+    --verde-claro: #a8c97a;
+    --verde-profundo: #2a3f2b;
+    --verde-input: #253d27;
+    --verde-input-focus: #2e4a30;
+    --bege: #EBE4C2;
+    --bege-suave: #cde0b0;
+    --fundo: #1a3a21;
+    --texto-contraste: #1e2e1f;
+}
+
 /* ===== CONFIGURAÇÃO GERAL ===== */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    background-color: var(--fundo);
     color: white;
 
     display: grid;
@@ -27,8 +43,8 @@ main,
 footer,
 .page,
 .card {
-    background-color: #324D34;
-    border: 2px solid #719542;
+    background-color: var(--verde-escuro);
+    border: 2px solid var(--verde-destaque);
     backdrop-filter: blur(5px);
     border-radius: 10px;
 }
@@ -41,6 +57,7 @@ header {
 }
 
 header h1 {
+    color: var(--bege);
     margin-bottom: 15px;
     text-transform: capitalize;
 }
@@ -54,14 +71,14 @@ nav ul {
 nav a {
     text-decoration: none;
     color: white;
-    background-color: #719542;
+    background-color: var(--verde-destaque);
     padding: 10px 15px;
     border-radius: 8px;
     transition: 0.3s;
 }
 
 nav a:hover {
-    background-color: #72997A;
+    background-color: var(--verde-medio);
 }
 
 /* ===== PÁGINA: PUBLICAR NOTÍCIA ===== */
@@ -72,8 +89,8 @@ nav a:hover {
 
 /* ===== HERO ===== */
 .hero {
-    background-color: #2a3f2b;
-    border-bottom: 2px solid #719542;
+    background-color: var(--verde-profundo);
+    border-bottom: 2px solid var(--verde-destaque);
 }
 
 .hero-inner {
@@ -84,7 +101,7 @@ nav a:hover {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #a8c97a;
+    color: var(--verde-claro);
     margin-bottom: 10px;
 }
 
@@ -94,7 +111,7 @@ nav a:hover {
 }
 
 .hero p {
-    color: #cde0b0;
+    color: var(--bege-suave);
     font-size: 15px;
 }
 
@@ -111,18 +128,18 @@ nav a:hover {
 
 /* ===== AVISO ===== */
 .aviso-publicar {
-    background-color: #2a3f2b;
-    border: 1px solid #719542;
-    border-left: 4px solid #a8c97a;
+    background-color: var(--verde-profundo);
+    border: 1px solid var(--verde-destaque);
+    border-left: 4px solid var(--verde-claro);
     border-radius: 8px;
     padding: 14px 18px;
     font-size: 14px;
-    color: #cde0b0;
+    color: var(--bege-suave);
     line-height: 1.5;
 }
 
 .aviso-publicar strong {
-    color: #a8c97a;
+    color: var(--verde-claro);
 }
 
 /* ===== GRUPOS DE FORMULÁRIO ===== */
@@ -136,7 +153,7 @@ nav a:hover {
 .form-grupo label {
     font-size: 13px;
     font-weight: bold;
-    color: #a8c97a;
+    color: var(--verde-claro);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -144,8 +161,8 @@ nav a:hover {
 .form-grupo input,
 .form-grupo select,
 .form-grupo textarea {
-    background-color: #253d27;
-    border: 1.5px solid #719542;
+    background-color: var(--verde-input);
+    border: 1.5px solid var(--verde-destaque);
     border-radius: 8px;
     padding: 10px 14px;
     color: white;
@@ -157,18 +174,18 @@ nav a:hover {
 
 .form-grupo input::placeholder,
 .form-grupo textarea::placeholder {
-    color: #72997A;
+    color: var(--verde-suave);
 }
 
 .form-grupo input:focus,
 .form-grupo select:focus,
 .form-grupo textarea:focus {
-    border-color: #a8c97a;
-    background-color: #2e4a30;
+    border-color: var(--verde-claro);
+    background-color: var(--verde-input-focus);
 }
 
 .form-grupo select option {
-    background-color: #324D34;
+    background-color: var(--verde-escuro);
     color: white;
 }
 
@@ -186,7 +203,7 @@ nav a:hover {
 
 /* ===== BOTÃO PUBLICAR ===== */
 .btn-publicar {
-    background-color: #719542;
+    background-color: var(--verde-destaque);
     color: white;
     border: none;
     border-radius: 8px;
@@ -199,20 +216,20 @@ nav a:hover {
 }
 
 .btn-publicar:hover {
-    background-color: #a8c97a;
-    color: #1e2e1f;
+    background-color: var(--verde-claro);
+    color: var(--texto-contraste);
     transform: scale(1.03);
 }
 
 /* ===== TOAST ===== */
 .toast {
     display: none;
-    background-color: #2a3f2b;
-    border: 1px solid #a8c97a;
+    background-color: var(--verde-profundo);
+    border: 1px solid var(--verde-claro);
     border-radius: 8px;
     padding: 12px 18px;
     font-size: 14px;
-    color: #cde0b0;
+    color: var(--bege-suave);
     animation: fadeIn 0.4s ease;
 }
 
@@ -232,7 +249,7 @@ footer {
     margin: 10px;
     text-align: center;
     font-size: 13px;
-    color: #a8c97a;
+    color: var(--bege);
 }
 
 /* ===== RESPONSIVIDADE ===== */
