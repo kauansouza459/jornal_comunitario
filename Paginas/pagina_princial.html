@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Assents/Css/styles.css">
     <title>modelo para ver os espaçoes onde o site posuira cada coisa</title>
+    <style>
+        /* faz a página rolar suavemente até a âncora */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* compensa a altura do cabeçalho fixo, se houver, ao pular para o card */
+        .card {
+            scroll-margin-top: 80px;
+        }
+    </style>
 </head>
 <body>
     <!--- Cabeçalho --->
@@ -24,9 +34,15 @@
     <aside>
         <h2>Menu Lateral</h2>
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
+            <li><a href="#card-1">Card 1</a></li>
+            <li><a href="#card-2">Card 2</a></li>
+            <li><a href="#card-3">Card 3</a></li>
+            <li><a href="#card-4">Card 4</a></li>
+            <li><a href="#card-5">Card 5</a></li>
+            <li><a href="#card-6">Card 6</a></li>
+            <li><a href="#card-7">Card 7</a></li>
+            <li><a href="#card-8">Card 8</a></li>
+            <li><a href="#card-9">Card 9</a></li>
         </ul>
     </aside>
 
@@ -36,7 +52,7 @@
         <p>Este é o conteúdo principal do site. Aqui você pode colocar textos, imagens, vídeos e outros elementos para informar os visitantes sobre o que seu site oferece.</p>
 
         <!-- ══════════════ CARD 1 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-1">
             <h3>Card 1</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -61,7 +77,7 @@
         </div>
 
         <!-- ══════════════ CARD 2 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-2">
             <h3>Card 2</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -86,7 +102,7 @@
         </div>
 
         <!-- ══════════════ CARD 3 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-3">
             <h3>Card 3</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -111,7 +127,7 @@
         </div>
 
         <!-- ══════════════ CARD 4 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-4">
             <h3>Card 4</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -136,7 +152,7 @@
         </div>
 
         <!-- ══════════════ CARD 5 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-5">
             <h3>Card 5</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -155,7 +171,7 @@
         </div>
 
         <!-- ══════════════ CARD 6 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-6">
             <h3>Card 6</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -180,7 +196,7 @@
         </div>
 
         <!-- ══════════════ CARD 7 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-7">
             <h3>Card 7</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -199,7 +215,7 @@
         </div>
 
         <!-- ══════════════ CARD 8 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-8">
             <h3>Card 8</h3>
             <div class="card-grid">
                 <div class="sub-card">
@@ -218,7 +234,7 @@
         </div>
 
         <!-- ══════════════ CARD 9 ══════════════ -->
-        <div class="card">
+        <div class="card" id="card-9">
             <h3>Card 9</h3>
             <div class="card-grid">
                 <div class="sub-card">
