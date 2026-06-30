@@ -16,7 +16,7 @@
             <ul>
                 <li><a href="pagina_princial.html">Pagina Principal</a></li>
                 <li><a href="pagina_contatos.html">Pagina Contatos</a></li>
-                <li><a href="pagina_enviar_duvida.html">Pagina Enviar Duvidas</a></li>
+                <li><a href="pagina_enviar_duvida.html" id="paginaATUAL">Pagina Enviar Duvidas</a></li>
                 <li><a href="enviar_noticia.html">Enviar Noticia</a></li>
             </ul>
         </nav>
@@ -88,33 +88,70 @@
 
     <script>
 
+        // Pega o formulário inteiro pelo id "formDuvida" e guarda na variável "formulario".
+        // É a partir dele que vamos "escutar" o envio (submit).
         const formulario = document.getElementById("formDuvida");
 
+        // addEventListener "escuta" um evento no elemento.
+        // Aqui estamos dizendo: "quando o formulário for enviado (submit), execute esta função".
         formulario.addEventListener("submit", function(event){
 
+            // Por padrão, ao enviar um formulário o navegador recarrega a página.
+            // preventDefault() cancela esse comportamento, para podermos controlar tudo via JS.
             event.preventDefault();
 
+            // Pega o valor digitado em cada campo do formulário.
+            // .trim() remove espaços em branco extras no início/fim do texto.
             let nome = document.getElementById("nome").value.trim();
             let email = document.getElementById("email").value.trim();
             let assunto = document.getElementById("assunto").value.trim();
 
+            // Pega o elemento <p id="mensagem"> que vamos usar para mostrar feedback na tela.
             let mensagem = document.getElementById("mensagem");
 
+            // Verifica se algum dos campos obrigatórios está vazio.
+            // Se estiver, mostra uma mensagem de erro e interrompe a função com "return".
             if(nome === "" || email === "" || assunto === ""){
                 mensagem.innerHTML = "Por favor, preencha todos os campos.";
-                mensagem.style.color = "#e07a7a";
-                mensagem.classList.add("show");
-                return;
+                mensagem.style.color = "#e07a7a"; // cor avermelhada indicando erro
+                mensagem.classList.add("show");   // classe CSS que torna a mensagem visível
+                return; // para a execução aqui, não envia nada
             }
 
+            // --- A PARTIR DAQUI: o formulário foi preenchido corretamente ---
+
+            // Cria um objeto Date com a data e hora exatas do momento do envio.
+            let dataEnvio = new Date();
+
+            // toLocaleString formata a data/hora no padrão brasileiro (dd/mm/aaaa hh:mm:ss).
+            let dataFormatada = dataEnvio.toLocaleString("pt-BR");
+
+            // Mostra no console (F12 > Console) um log com a data e o e-mail de quem enviou.
+            // Isso é só para fins de depuração/registro, o usuário comum não vê isso.
+            console.log("Nova dúvida enviada em: " + dataFormatada + " | E-mail: " + email);
+
+            // alert() abre um pop-up nativo do navegador com a mensagem de confirmação.
+            // A execução do script pausa até o usuário clicar em "OK".
+            alert("Sua dúvida foi enviada com sucesso!\nData: " + dataFormatada);
+
+            // Atualiza o texto de feedback na própria página (além do pop-up).
             mensagem.innerHTML = "Sua dúvida foi enviada com sucesso!";
-            mensagem.style.color = "#a8c97a";
+            mensagem.style.color = "#a8c97a"; // cor esverdeada indicando sucesso
             mensagem.classList.add("show");
 
+            // formulario.reset() limpa todos os campos do formulário (nome, e-mail, assunto),
+            // deixando-o pronto para um novo preenchimento.
             formulario.reset();
 
         });
 
+    </script>
+
+    <script>
+    document.getElementById("paginaATUAL").addEventListener("click", function(event) {
+        event.preventDefault();
+        alert("Você já está nesta Pagina!");
+    });
     </script>
 
 </body>

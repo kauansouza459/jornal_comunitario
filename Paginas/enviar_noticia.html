@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site</title>
     <link rel="stylesheet" href="/Assents/Css/styles3.css">
-    <script src="script.js"></script>
 </head>
 <body>
 
@@ -17,7 +16,7 @@
           <li><a href="pagina_princial.html">Pagina Principal</a></li>
           <li><a href="pagina_contatos.html">Pagina Contatos</a></li>
           <li><a href="pagina_enviar_duvida.html">Pagina Enviar Duvidas</a></li>
-          <li><a href="enviar_noticia.html">Enviar Noticia</a></li>
+          <li><a href="enviar_noticia.html" id="paginaATUAL">Enviar Noticia</a></li>
         </ul>
       </nav>
     </header>
@@ -43,11 +42,29 @@
           <label>Região / Bairro</label>
           <select id="regiao-noticia">
             <option value="">Selecione a região...</option>
+            <option>Campo da Aviação</option>
+            <option>Vila Nova</option>
+            <option>Vila Santo Antonio</option>
             <option>Centro</option>
-            <option>Bairro Norte</option>
-            <option>Bairro Sul</option>
-            <option>Bairro Leste</option>
-            <option>Zona Rural</option>
+            <option>Campestre</option>
+            <option>Paes Leme</option>
+            <option>Vila Nova Alvorada</option>
+            <option>Alvorada</option>
+            <option>Vila Esperança</option>
+            <option>Penha</option>
+            <option>Sagrada Família</option>
+            <option>São Tomás</option>
+            <option>Barra</option>
+            <option>Praia do Rosa</option>
+            <option>Mirim</option>
+            <option>Morro do Mirim</option>
+            <option>Guaiúba</option>
+            <option>Arroio</option>
+            <option>Ibiraquera</option>
+            <option>Portinho da Vila</option>
+            <option>Ribanceira</option>
+            <option>Itapirubá</option>
+            <option>Boa Vista</option>
           </select>
         </div>
         <div class="form-grupo">
@@ -89,6 +106,73 @@
     <footer>
         <p>&copy; Conteúdo sem fontes reais.</p>
     </footer>
+
+    <script>
+    document.getElementById("paginaATUAL").addEventListener("click", function(event) {
+        event.preventDefault();
+        alert("Você já está nesta Pagina!");
+    });
+    </script>
+
+    <script>
+
+        // Esta função é chamada pelo botão "Enviar para Publicação" (onclick="publicarNoticia()").
+        function publicarNoticia(){
+
+            // Pega o valor digitado/selecionado em cada campo do formulário.
+            // .trim() remove espaços em branco extras no início/fim do texto.
+            let titulo = document.getElementById("titulo-noticia").value.trim();
+            let regiao = document.getElementById("regiao-noticia").value.trim();
+            let categoria = document.getElementById("categoria-noticia").value.trim();
+            let conteudo = document.getElementById("conteudo-noticia").value.trim();
+            let autor = document.getElementById("autor-noticia").value.trim();
+            let email = document.getElementById("email-noticia").value.trim();
+
+            // Pega o elemento da mensagem de feedback (toast) que já existe no HTML.
+            let toast = document.getElementById("toast-publicar");
+
+            // Verifica se algum dos campos obrigatórios está vazio.
+            // Se algum estiver, mostra um aviso de erro e interrompe a função com "return".
+            if(titulo === "" || regiao === "" || categoria === "" || conteudo === "" || autor === "" || email === ""){
+                toast.innerHTML = "⚠️ Por favor, preencha todos os campos antes de enviar.";
+                toast.style.color = "#e07a7a"; // cor avermelhada indicando erro
+                toast.classList.add("show");   // classe CSS que torna o toast visível
+                return; // para a execução aqui, não publica nada
+            }
+
+            // --- A PARTIR DAQUI: todos os campos foram preenchidos corretamente ---
+
+            // Cria um objeto Date com a data e hora exatas do momento da publicação.
+            let dataEnvio = new Date();
+
+            // toLocaleString formata a data/hora no padrão brasileiro (dd/mm/aaaa hh:mm:ss).
+            let dataFormatada = dataEnvio.toLocaleString("pt-BR");
+
+            // Mostra no console (F12 > Console) um log com a data e o e-mail de quem publicou.
+            // Isso serve como registro/depuração, o usuário comum não vê isso na tela.
+            console.log("Nova notícia publicada em: " + dataFormatada + " | E-mail do autor: " + email);
+
+            // alert() abre um pop-up nativo do navegador confirmando o envio, com a data.
+            // A execução do script pausa até o usuário clicar em "OK".
+            alert("Notícia enviada com sucesso!\nData: " + dataFormatada);
+
+            // Atualiza o texto do toast já presente no HTML, restaurando a cor de sucesso.
+            toast.innerHTML = "✅ Notícia enviada com sucesso! Aguarde a revisão dos administradores.";
+            toast.style.color = "#a8c97a"; // cor esverdeada indicando sucesso
+            toast.classList.add("show");
+
+            // Limpa manualmente cada campo do formulário (inputs, selects e textarea),
+            // já que aqui não temos um <form> com .reset(), e sim campos soltos.
+            document.getElementById("titulo-noticia").value = "";
+            document.getElementById("regiao-noticia").value = "";
+            document.getElementById("categoria-noticia").value = "";
+            document.getElementById("conteudo-noticia").value = "";
+            document.getElementById("autor-noticia").value = "";
+            document.getElementById("email-noticia").value = "";
+
+        }
+
+    </script>
 
 </body>
 </html>
