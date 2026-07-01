@@ -113,11 +113,12 @@ main > p{
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
+    background-color: var(--verde-escuro);
 }
 
 .card:hover{
     transform: scale(1.02);
-    background-color: var(--verde-destaque);
+    background-color: var(--verde-medio);
 }
 
 /* ===== AVATAR ===== */
@@ -125,7 +126,7 @@ main > p{
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 2px solid var(--verde-destaque);
+    border: 2px solid var(--verde-escuro);
     background-color: var(--verde-escuro);
     display: flex;
     align-items: center;
@@ -185,7 +186,7 @@ main > p{
     margin-top: 4px;
     width: 100%;
     padding: 8px;
-    background-color: var(--verde-destaque);
+    background-color: var(--fundo);
     border: none;
     border-radius: 7px;
     color: var(--bege);
